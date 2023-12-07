@@ -10,4 +10,4 @@ class SubjectMatter(Base):
   SubjectName = Column(String(255))
 
   # Relationship
-  episodes = relationship('Episode', secondary='EpisodeSubjectMatter', back_populates='subject_matters')
+  episode_subject_matters = relationship("EpisodeSubjectMatter", back_populates="subject_matter")
