@@ -10,5 +10,5 @@ class EpisodeSubjectMatter(Base):
   SubjectID = Column(Integer, ForeignKey('SubjectMatter.SubjectID'), primary_key=True)
 
   # Relationships
-  episode = relationship("Episode", back_populates="subject_matters")
-  subject_matter = relationship("SubjectMatter", back_populates="episodes")
+  episode = relationship("Episode", back_populates="episode_subject_matters")
+  subject_matter = relationship("SubjectMatter", back_populates="episode_subject_matters")
