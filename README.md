@@ -17,14 +17,30 @@ To get the API up and running on your local machine, follow these steps:
   cd holbertonschool-the-joy-of-painting-api
   ```
 
-2. **Set Up the Environment**
+2. **MySQL Setup**
+- Install MySQL if it's not already installed
+- Create the database and tables by running the SQL script:
+  ```sh
+  mysql -u yourusername -p < database_setup.sql
+  ```
+- Update your database credentials in the '.env' file or set them as environment variables.
+
+3. **Set Up the Environment**
 - Make sure Python 3 and pip are installed.
 - Install the required Python packages:
   ```sh
   pip install -r requirements.txt
   ```
 
-3. **Start the Flask App**
+4. **Run ETL Scripts**
+- Execute the ETL scripts to extract, transform, and load the data into your database:
+  ```sh
+  python3 ETL/load_episodes_to_db.py
+  python3 ETL/load_colors_to_db.py
+  python3 ETL/load_subject_matter_to_db.py
+  ```
+
+5. **Start the Flask App**
   ```sh
   python3 run.py
   ```
