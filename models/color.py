@@ -11,4 +11,4 @@ class Color(Base):
   ColorHexCode = Column(String(7))
 
   # Relationship
-  episodes = relationship('Episode', secondary='EpisodeColors', back_populates='colors')
+  episode_colors = relationship("EpisodeColor", back_populates="color")
