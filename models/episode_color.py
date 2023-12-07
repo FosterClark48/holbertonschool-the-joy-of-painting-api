@@ -10,5 +10,5 @@ class EpisodeColor(Base):
   ColorID = Column(Integer, ForeignKey('Colors.ColorID'), primary_key=True)
 
   # Relationships
-  episode = relationship("Episode", back_populates="colors")
-  color = relationship("Color", back_populates="episodes")
+  episode = relationship("Episode", back_populates="episode_colors")
+  color = relationship("Color", back_populates="episode_colors")
