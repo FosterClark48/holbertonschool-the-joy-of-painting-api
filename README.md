@@ -77,7 +77,7 @@ To query the API, use the following endpoint structure:
 
 ## Author :black_nib:
 - **Foster Clark** - [fozc](https://github.com/FosterClark48) :octocat:
-- **LinkedIn** - [FosterClark12](https://www.linkedin.com/in/fosterclark12/) ![LinkedIn](https://github.com/FosterClark48/holbertonschool-the-joy-of-painting-api/raw/main/flexbox/images/linkedin-original.svg)
+- **LinkedIn** - [FosterClark12](https://www.linkedin.com/in/fosterclark12/) ![](https://i.stack.imgur.com/gVE0j.png)(https://www.linkedin.com/in/fosterclark12/)
 
 ---
 
