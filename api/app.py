@@ -8,6 +8,22 @@ import os
 
 app = Flask(__name__)
 
+# Month mapping
+month_mapping = {
+    'January': 1,
+    'February': 2,
+    'March': 3,
+    'April': 4,
+    'May': 5,
+    'June': 6,
+    'July': 7,
+    'August': 8,
+    'September': 9,
+    'October': 10,
+    'November': 11,
+    'December': 12
+}
+
 # Database setup
 username = os.getenv('MYSQL_USERNAME', 'root')
 password = os.getenv('MYSQL_PASSWORD', '')
@@ -26,18 +42,21 @@ def get_episodes():
     # Filter by month
     month = request.args.get('month')
     if month:
-        query = query.filter(func.month(Episode.AirDate) == func.month(func.str_to_date(month, '%M')))
+        month_number = month_mapping.get(month.capitalize())
+        if month_number:
+            query = query.filter(func.month(Episode.AirDate) == month_number)
 
     # Filter by subject matter
     subject = request.args.get('subject')
     if subject:
-        query = query.join(Episode.subject_matters).filter(SubjectMatter.SubjectName == subject)
+        query = query.join(Episode.episode_subject_matters).join(SubjectMatter).filter(SubjectMatter.SubjectName == subject)
 
     # Filter by color
     color = request.args.get('color')
     if color:
-        query = query.join(Episode.colors).filter(Color.ColorName == color)
+        query = query.join(Episode.episode_colors).join(Color).filter(Color.ColorName == color)
 
+    # print(query)
     episodes = query.all()
     session.close()
 
