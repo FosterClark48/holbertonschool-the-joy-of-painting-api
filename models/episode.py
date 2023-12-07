@@ -13,5 +13,5 @@ class Episode(Base):
   AirDate = Column(Date)
 
   # Relationships
-  colors = relationship('Color', secondary='EpisodeColors', back_populates='episodes')
-  subject_matters = relationship('SubjectMatter', secondary='EpisodeSubjectMatter', back_populates='episodes')
+  episode_colors = relationship("EpisodeColor", back_populates="episode")
+  episode_subject_matters = relationship("EpisodeSubjectMatter", back_populates="episode")
