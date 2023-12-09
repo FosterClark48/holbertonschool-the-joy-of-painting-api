@@ -35,6 +35,8 @@ To get the API up and running on your local machine, follow these steps:
 4. **Run ETL Scripts**
 - Execute the ETL scripts to extract, transform, and load the data into your database:
   ```sh
+  python3 ETL/transform_colors_data.py
+  python3 ETL/transform_subject_matter.py
   python3 ETL/load_episodes_to_db.py
   python3 ETL/load_colors_to_db.py
   python3 ETL/load_subject_matter_to_db.py
